@@ -3,9 +3,9 @@ package ua.kpi.tef.zu.springbasics.music;
 /**
  * Created by Anton Domin on 2020-02-25
  */
-public class ClassicalMusic implements Music {
+public class JazzMusic implements Music{
 	@Override
 	public String getSong() {
-		return "Beethoven - Symphony #5";
+		return "Coltrane - Giant Steps";
 	}
 }

@@ -8,13 +8,35 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="someBean"
-          class="ua.kpi.tef.zu.springbasics.SomeBean">
-        <!--<constructor-arg value=""/>-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="musicPlayer"
+        class="ua.kpi.tef.zu.springbasics.music.MusicPlayer">
+        <!--<constructor-arg ref="musicBean"/> -->
+        <property name="playList" ref="playList"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
-    <bean id="musicBean"
+    <bean id="playList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="musicRock" />
+                <ref bean="musicClassic" />
+                <ref bean="musicJazz" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="musicRock"
+        class="ua.kpi.tef.zu.springbasics.music.RockMusic">
+    </bean>
+
+    <bean id="musicClassic"
           class="ua.kpi.tef.zu.springbasics.music.ClassicalMusic">
+    </bean>
+
+    <bean id="musicJazz"
+          class="ua.kpi.tef.zu.springbasics.music.JazzMusic">
     </bean>
 
 </beans>

@@ -6,6 +6,6 @@ package ua.kpi.tef.zu.springbasics.music;
 public class RockMusic implements Music {
 	@Override
 	public String getSong() {
-		return "Warriors of the World (United)";
+		return "Manowar - Warriors of the World (United)";
 	}
 }
