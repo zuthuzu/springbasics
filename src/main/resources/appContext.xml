@@ -13,4 +13,8 @@
         <!--<constructor-arg value=""/>-->
     </bean>
 
+    <bean id="musicBean"
+          class="ua.kpi.tef.zu.springbasics.music.ClassicalMusic">
+    </bean>
+
 </beans>
